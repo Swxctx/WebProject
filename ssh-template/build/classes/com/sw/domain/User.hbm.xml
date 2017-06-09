@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sw.domain.User" table="user">
+        <!-- 配置主键 -->
+        <id name="id" type="int"> 
+            <!-- 列定义 -->
+            <column name="id" not-null="true" sql-type="int"></column>
+            <!-- 生成策略 -->
+            <generator class="uuid"></generator>
+        </id>
+        <!-- 字段配置 -->
+        <property name="username" type="string">
+            <column name="username" sql-type="varchar(50)"></column>
+        </property>
+        
+        <property name="password" type="string">
+            <column name="password" sql-type="varchar(50)"></column>
+        </property>
+    </class>
+</hibernate-mapping>

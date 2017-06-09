@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	
+	<!-- 将action配置在spring容器中 -->
+	<constant name="struts.objectFactory" value="spring"></constant> 
+   	
+   	<package name="ssh-template" extends="struts-default">
+   	     <!-- 用户登录 -->
+        <action name="login" class="loginAction">  
+            <!-- 定义逻辑视图和物理资源之间的映射 -->  
+            <result name="success" type="redirect">
+            	<param name="location">/login/successlogin.html</param>
+            </result>  
+            <result name="error" type="redirect">/login/errlogin.html</result>  
+        </action> 
+   	</package>
+</struts>

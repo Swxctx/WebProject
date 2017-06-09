@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">0707</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bs</property>
+		
+		<!-- 事务自动提交，使用sessionFactory需要进行此项配置 -->
+		<!-- <property name="hibernate.connection.autocommit">true</property> -->
+		
+		<!-- 配置方言 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<!-- 操作数据库的形式 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!-- sql语句 -->
+		<property name="hibernate.show_sql">true</property>
+		
+		
+		<!-- 映射文件 -->
+		<mapping resource="com/sw/domain/User.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
