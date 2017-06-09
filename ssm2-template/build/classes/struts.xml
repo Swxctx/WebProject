@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+  <!DOCTYPE struts PUBLIC  
+      "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"  
+      "http://struts.apache.org/dtds/struts-2.0.dtd">  
+  
+  <struts> 
+  
+  <constant name="struts.objectFactory" value="spring"></constant> 
+     <!-- struts的action配置文件 -->  
+       
+     <!-- 所有的action都应该放在对应的package下 -->  
+     <package name="ssm-template" extends="struts-default">  
+        
+        <!-- 用户登录 -->
+        <action name="login" class="loginAction">  
+            <!-- 定义逻辑视图和物理资源之间的映射 -->  
+            <result name="success" >
+            	<param name="location">/success.html</param>
+            </result>  
+            <result name="error">/err.html</result>  
+        </action> 
+       
+     </package>  
+</struts>  
